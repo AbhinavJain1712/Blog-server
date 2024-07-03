@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 
-import Token from '../model/token.js'
+import Token from '../model/token.js';
 import User from '../model/user.js';
 
 dotenv.config();
@@ -18,7 +18,7 @@ export const singupUser = async (request, response) => {
         const newUser = new User(user);
         await newUser.save();
 
-        return response.status(200).json({ msg: 'Signup successfull' });
+        return response.status(200).json({ msg: 'Signup successful' });
     } catch (error) {
         return response.status(500).json({ msg: 'Error while signing up user' });
     }

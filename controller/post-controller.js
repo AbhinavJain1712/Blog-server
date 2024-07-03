@@ -63,8 +63,8 @@ export const getAllPosts = async (request, response) => {
         else 
             posts = await Post.find({});
             
-        response.status(200).json(posts);
+       return response.status(200).json(posts);
     } catch (error) {
-        response.status(500).json(error)
+       return response.status(500).json({msg:error.message})
     }
 }
