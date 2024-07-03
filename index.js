@@ -24,4 +24,11 @@ const password = process.env.DB_PASSWORD;
 const URL = process.env.MONGODB_URI || process.env.DB_URL;
 Connection(URL);
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the Home Page!');
+  });
+  
+  // Use the router for your API routes
+  app.use('/api', Router);
+
 app.listen(PORT, () => console.log(`Server is running successfully on PORT ${PORT}`));
